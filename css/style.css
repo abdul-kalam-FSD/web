@@ -111,6 +111,22 @@ main{
  .solution-wrapper:not(:last-child){
     margin-bottom:50px ;
  }
+ .happy{
+    padding: 100px 0px;
+ }
+ .happy-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .happy-wrapper>div:last-child{
+    text-align: right;
+}
+
+.happy-wrapper>div p{
+    margin-bottom: 50px;
+}
+
 /* media start */
 @media only screen and (min-width: 1200px) {
   .banner-wrapper h2{
