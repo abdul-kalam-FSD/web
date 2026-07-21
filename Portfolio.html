@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stylish Fresher Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #23272f 0%, #3a475c 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+    .navbar {
+      background: linear-gradient(90deg, #23272f 0%, #3a475c 100%);
+      box-shadow: 0 4px 24px rgba(34,39,47,0.12);
+      animation: fadeInDown 1s;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #e0e0e0 !important;
+      text-shadow: 1px 2px 8px #23272f;
+    }
+    .nav-link {
+      color: #e0e0e0 !important;
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-right: 18px;
+      transition: color 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #1e90ff !important;
+      transform: scale(1.1);
+      text-shadow: 0 2px 8px #23272f;
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #1e90ff;
+      box-shadow: 0 8px 32px rgba(30,144,255,0.18);
+      margin-bottom: 20px;
+      animation: bounceIn 1.2s;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.7);}
+      60% { transform: scale(1.15);}
+      80% { transform: scale(0.95);}
+      100% { transform: scale(1);}
+    }
+    .section-title {
+      font-weight: 700;
+      color: #1e90ff;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      animation: fadeInUp 1s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .skills-list span {
+      display: inline-block;
+      background: linear-gradient(90deg, #23272f 0%, #1e90ff 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 8px 20px;
+      margin: 6px 10px 6px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.12);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      animation: fadeInUp 1s;
+    }
+    .skills-list span:hover {
+      transform: scale(1.12) rotate(-3deg);
+      box-shadow: 0 6px 24px rgba(30,144,255,0.22);
+      background: linear-gradient(90deg, #1e90ff 0%, #23272f 100%);
+    }
+    .project-card {
+      background: #23272f;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(30,144,255,0.12);
+      padding: 28px 22px;
+      margin-bottom: 32px;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1s;
+      color: #e0e0e0;
+      border: 1px solid #3a475c;
+    }
+    .project-card:hover {
+      box-shadow: 0 12px 48px rgba(30,144,255,0.22);
+      transform: translateY(-8px) scale(1.03);
+      border: 2px solid #1e90ff;
+    }
+    .project-card h5 {
+      color: #1e90ff;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .project-card a {
+      color: #1e90ff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .project-card a:hover {
+      color: #e0e0e0;
+      text-decoration: underline;
+    }
+    .contact-info a {
+      color: #1e90ff;
+      text-decoration: none;
+      margin-right: 18px;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .contact-info a:hover {
+      color: #e0e0e0;
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+    .form-control:focus {
+      border-color: #1e90ff;
+      box-shadow: 0 0 0 0.2rem rgba(30,144,255,0.15);
+      background: #23272f;
+      color: #e0e0e0;
+    }
+    .form-control {
+      background: #23272f;
+      color: #e0e0e0;
+      border: 1px solid #3a475c;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #23272f 0%, #1e90ff 100%);
+      border: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.12);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #1e90ff 0%, #23272f 100%);
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(30,144,255,0.22);
+      color: #fff;
+    }
+    footer {
+      background: linear-gradient(90deg, #23272f 0%, #1e90ff 100%);
+      color: #e0e0e0;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 -2px 12px rgba(30,144,255,0.08);
+      animation: fadeInUp 1s;
+    }
+    /* Animations for sections */
+    .animated-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    .animated-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Fresher Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="container text-center py-5 animated-section">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-img">
+    <h1 class="mb-2">Your Name</h1>
+    <h5 class="text-muted mb-3" style="color:#e0e0e0 !important;">Aspiring Software Developer</h5>
+    <p class="lead mb-4">
+      Hi! I'm a passionate fresher with a strong foundation in web development and programming. I love building creative solutions and am eager to contribute to innovative projects.
+    </p>
+    <div class="contact-info mb-2">
+      <a href="mailto:your.email@example.com"><i class="bi bi-envelope"></i> your.email@example.com</a>
+      <a href="tel:+1234567890"><i class="bi bi-telephone"></i> +1234567890</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/yourusername" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container py-4 animated-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list mb-4">
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript</span>
+      <span>Bootstrap</span>
+      <span>React</span>
+      <span>Python</span>
+      <span>Git & GitHub</span>
+      <span>SQL</span>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container py-4 animated-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5><i class="bi bi-window"></i> Personal Portfolio Website</h5>
+          <p>A responsive portfolio website built with HTML, CSS, and Bootstrap to showcase my skills and projects.</p>
+          <a href="#" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View Project</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5><i class="bi bi-cloud-sun"></i> Weather App</h5>
+          <p>Developed a weather application using JavaScript and OpenWeatherMap API to display real-time weather data.</p>
+          <a href="#" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View Project</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5><i class="bi bi-check2-square"></i> Task Manager</h5>
+          <p>A simple task manager built with React for adding, editing, and deleting daily tasks.</p>
+          <a href="#" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View Project</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5><i class="bi bi-database"></i> Student Database System</h5>
+          <p>Created a Python-based student database system with CRUD operations and SQLite integration.</p>
+          <a href="#" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container py-4 mb-5 animated-section">
+    <h2 class="section-title">Contact Me</h2>
+    <form>
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="text-center py-3">
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Animation on scroll -->
+  <script>
+    function revealSections() {
+      document.querySelectorAll('.animated-section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('load', revealSections);
+  </script>
+</body>
+</html>
